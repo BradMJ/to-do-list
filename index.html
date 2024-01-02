@@ -6,9 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Odin Project - To-Do List</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="../src/index.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
-    
+    <header class="header">
+        <div class="icon-title">
+            <p>:ICON: Stuff I need to do</p>
+        </div>
+    </header>
+    <main class="main">
+        <nav class="side-bar">
+            <h3 class="sort-div-title">Sort Tasks</h3>
+            <div class="sort-tasks">
+                <button class="sort-btn">Today</button>
+                <button class="sort-btn">This Week</button>
+                <button class="sort-btn">This Month</button>
+                <button data-sort-priority-btn class="sort-btn sort-priority">Priority</button>
+            </div>
+            <!-- Projects Container -->
+            <div id="projects-container" class="projects-container">
+                <h3 class="projects-container-title">Projects</h3>
+                <ul id="projects-list" class="projects-list">
+                    <li class="active-project">Clean House</li>
+                </ul>
+            </div>
+            <button data-modal-target="#add-project-modal" id="add-project-btn" class="add-project-btn add-task-btn">+ Add Project</button>
+            <!-- Project Modal -->
+            <div id="add-project-modal" class="add-project-modal add-task-modal">
+                <div id="project-modal-header" class="project-modal-header modal-header">
+                    <div id="project-title" class="project-title task-title">
+                        <p>Add Project</p>
+                    </div>
+                    <button data-close-btn id="btn-cancel-project-modal" class="btn-cancel-project-modal modal-cancel-btn">&times;</button>
+                </div>
+                <div data-modal-target="#input-add-project-modal" id="project-modal-body" class="project-modal-body modal-body">
+                    <form action="" data-new-project-form>
+                        <input 
+                            type="text"
+                            id="input-add-project-modal"
+                            class="input-add-project-modal"
+                            data-new-project-input
+                            placeholder="Enter Project Name"
+                            aria-label="Enter Project Name"
+                        />
+                        <button data-add-btn id="btn-add-project-modal" class="btn-add-project-modal modal-add-btn">+</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Task Container -->
+        <div id="project-preview-container" class="project-preview-container">
+            <div id="task-list" class="task-list">
+                <div class="task-header">
+                    <h3 data-project-title class="project-name"></h3>
+                    <p data-task-count class="task-count"></p>
+                </div>
+                <div class="task-body">
+                    <div data-tasks class="tasks">
+                        <!-- Task 1 -->
+                        <div class="task">
+                            <input 
+                                type="checkbox"
+                                id="task-1"
+                            />
+                            <label for="task-1">
+                                <span class="custom-checkbox"></span>
+                                Vaccuum carpet
+                            </label>
+                        </div>
+                        <!-- Task 2 -->
+                        <div class="task">
+                            <input 
+                                type="checkbox"
+                                id="task-2"
+                            />
+                            <label for="task-2">
+                                <span class="custom-checkbox"></span>
+                                Dust electronics
+                            </label>
+                        </div>
+                        <!-- Task 3 -->
+                        <div class="task">
+                            <input 
+                                type="checkbox"
+                                id="task-3"
+                            />
+                            <label for="task-3">
+                                <span class="custom-checkbox"></span>
+                                Sweep floor
+                            </label>
+                        </div>
+                    </div>
+                    <div class="delete-buttons">
+                        <button data-delete-completed-tasks-btn class="btn delete-tasks-btn">Clear Completed Tasks</button>
+                        <button data-delete-selected-project-btn class="btn delete-project-btn">Delete Project</button>
+                    </div>
+                </div>
+            </div>
+            <button data-modal-target="#add-task-modal" id="add-task-btn" class="add-todo-btn add-task-btn">+ Add Task</button>
+            <!-- Task Modal -->
+            <div id="add-task-modal" class="add-todo-modal add-task-modal">
+                <div id="task-modal-header" class="task-modal-header modal-header">
+                    <div id="task-title" class="to-do-title task-title">
+                        <p>Add Task</p>
+                    </div>
+                    <button data-close-btn id="btn-cancel-task-modal" class="btn-cancel-task-modal modal-cancel-btn">&times;</button>
+                </div>
+                <div id="task-modal-body" class="task-modal-body modal-body">
+                    <form action="" data-new-task-form>
+                        <input 
+                            type="text"
+                            id="new-task-input"
+                            class="new-class-input"
+                            data-new-task-input
+                            placeholder="Enter Task"
+                            aria-label="Enter Task"
+                        />
+                        <button data-add-btn id="btn-add-task-modal" class="btn-add-task-modal modal-add-btn">+</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Overlay for open modal background -->
+        <div id="overlay" class="overlay"></div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Copyright © BradMJ 
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+        </p>
+    </footer>
 </body>
 </html>
