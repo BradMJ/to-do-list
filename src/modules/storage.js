@@ -1,13 +1,13 @@
-import Project from "./projects";
-import Task from "./tasks";
-import ProjectList from "./projectList";
+import Project from "./projects.js";
+import Task from "./tasks.js";
+import ProjectList from "./projectList.js";
 
 export default class Storage {
-    saveTaskList(data) {
+    static saveTaskList(data) {
         localStorage.setItem('projectList', JSON.stringify(data));
     };
 
-    getTaskList() {
+    static getTaskList() {
         const projectList = Object.assign(
             new ProjectList(), 
             JSON.parse(localStorage.getItem('projectList'))
@@ -15,7 +15,7 @@ export default class Storage {
 
         projectList.setProjects(
             projectList.getProjects()
-            .map((projects) => Object.assign(new Project(), project))
+            .map((project) => Object.assign(new Project(), project))
         );
 
         projectList.getProjects()
@@ -27,25 +27,25 @@ export default class Storage {
         return projectList;
     };
 
-    addProject(project) {
+    static addProject(project) {
         const projectList = Storage.getTaskList();
         projectList.addProject(project);
         Storage.saveTaskList(projectList);
     };
 
-    deleteProject(projectName) {
+    static deleteProject(projectName) {
         const projectList = Storage.getTaskList();
         projectList.deleteProject(projectName);
         Storage.saveTaskList(projectList);
     };
 
-    addTask(projectName, task) {
+    static addTask(projectName, task) {
         const projectList = Storage.getTaskList();
         projectList.getProject(projectName).addTask(task);
         Storage.saveTaskList(projectList);
     };
 
-    deleteTask(projectName, taskName) {
+    static deleteTask(projectName, taskName) {
         const projectList = Storage.getTaskList();
         projectList.getProject(projectName).deleteTask(taskName);
         Storage.saveTaskList(projectList);
