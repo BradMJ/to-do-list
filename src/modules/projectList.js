@@ -4,7 +4,8 @@ import Task from './tasks.js';
 export default class ProjectList {
     constructor() {
         this.projects = [];
-    }
+        this.projects.push(new Project('Clean House'));
+    };
 
     setProjects(projects) {
         this.projects = projects;
