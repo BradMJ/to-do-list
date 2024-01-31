@@ -16,19 +16,19 @@
     </header>
     <main class="main">
         <nav class="side-bar">
-            <h3 class="sort-div-title">Sort Tasks</h3>
+            <!-- <h3 class="sort-div-title">Sort Tasks</h3>
             <div class="sort-tasks">
                 <button class="sort-btn">Today</button>
                 <button class="sort-btn">This Week</button>
                 <button class="sort-btn">This Month</button>
                 <button data-sort-priority-btn class="sort-btn sort-priority">Priority</button>
-            </div>
+            </div> -->
             <!-- Projects Container -->
             <div id="projects-container" class="projects-container">
                 <h3 class="projects-container-title">Projects</h3>
-                <ul id="projects-list" class="projects-list">
-                    <li class="active-project">Clean House</li>
-                </ul>
+                <div id="projects-list" class="projects-list">
+                    <!-- User Projects Stored Here -->
+                </div>
             </div>
             <button data-modal-target="#add-project-modal" id="add-project-btn" class="add-project-btn add-task-btn">+ Add Project</button>
             <!-- Project Modal -->
@@ -57,53 +57,13 @@
         <!-- Task Container -->
         <div id="project-preview-container" class="project-preview-container">
             <div id="task-list" class="task-list">
-                <div class="task-header">
-                    <h3 data-project-title class="project-name"></h3>
-                    <p data-task-count class="task-count"></p>
+                <div id="task-header" class="task-header">
+                    <!-- Selected Project Title Stored Here -->
                 </div>
-                <div class="task-body">
-                    <div data-tasks class="tasks">
-                        <!-- Task 1 -->
-                        <div class="task">
-                            <input 
-                                type="checkbox"
-                                id="task-1"
-                            />
-                            <label for="task-1">
-                                <span class="custom-checkbox"></span>
-                                Vaccuum carpet
-                            </label>
-                        </div>
-                        <!-- Task 2 -->
-                        <div class="task">
-                            <input 
-                                type="checkbox"
-                                id="task-2"
-                            />
-                            <label for="task-2">
-                                <span class="custom-checkbox"></span>
-                                Dust electronics
-                            </label>
-                        </div>
-                        <!-- Task 3 -->
-                        <div class="task">
-                            <input 
-                                type="checkbox"
-                                id="task-3"
-                            />
-                            <label for="task-3">
-                                <span class="custom-checkbox"></span>
-                                Sweep floor
-                            </label>
-                        </div>
-                    </div>
-                    <div class="delete-buttons">
-                        <button data-delete-completed-tasks-btn class="btn delete-tasks-btn">Clear Completed Tasks</button>
-                        <button data-delete-selected-project-btn class="btn delete-project-btn">Delete Project</button>
-                    </div>
+                <div id="task-body" class="task-body">
+                    <!-- User Tasks Stored Here -->
                 </div>
             </div>
-            <button data-modal-target="#add-task-modal" id="add-task-btn" class="add-todo-btn add-task-btn">+ Add Task</button>
             <!-- Task Modal -->
             <div id="add-task-modal" class="add-todo-modal add-task-modal">
                 <div id="task-modal-header" class="task-modal-header modal-header">
@@ -116,8 +76,8 @@
                     <form action="" data-new-task-form>
                         <input 
                             type="text"
-                            id="new-task-input"
-                            class="new-class-input"
+                            id="input-add-task-modal"
+                            class="input-add-task-modal"
                             data-new-task-input
                             placeholder="Enter Task"
                             aria-label="Enter Task"
