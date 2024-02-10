@@ -10,7 +10,6 @@ export default class UI {
         UI.loadProjects();
         UI.initAddProjectButton();
         document.addEventListener('keydown', UI.handleKeyboardInput);
-        console.log('UI.loadHomepage is working')
     };
 
     static loadProjects() {
@@ -238,8 +237,6 @@ export default class UI {
         };
 
         Storage.addTask(projectName, new Task(taskName));
-        console.log(projectName);
-        console.log(taskName);
         UI.createTask(taskName);
         UI.closeAddTaskModal();
     };
