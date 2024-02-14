@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* Footer support */
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: fantasy;
+    /* Footer Support */
+    margin-bottom: 49.5px;
+}
+
+button {
+    /* width: 100%; */
+    font-family: fantasy;
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: none;
+    text-align: left;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.add-task-btn {
+    background-color: lightgray;
+    margin-top: 1rem;
+}
+
+/* Modals */
+
+.add-task-modal {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    width: 40%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-task-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header .task-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .modal-cancel-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+/* Overlay for Modals */
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Header */
+
+.header {
+    font-size: 2rem;
+    font-weight: 900;
+    background-color: rgb(180, 180, 180);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-title {
+    display: flex;
+    flex-direction: row;
+    gap: .7rem;
+}
+
+.logo {
+    height: 2.5rem;
+}
+
+/* Main */
+
+.main {
+    min-height: calc(100vh - 89.5px - 51px); 
+    display: flex;
+}
+
+/* Nav */
+
+.side-bar {
+    background-color: rgb(201, 201, 201);
+    padding: 20px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sort-tasks {
+
+}
+
+.active-project {
+    font-weight: 700;
+}
+
+.projects-container {
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects-container-title {
+    margin-bottom: 1rem;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.projects-list button {
+    font-size: 1.25rem;
+}
+
+/* Task Container */
+
+.project-preview-container {
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-header {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-preview-title {
+    font-size: 1.25rem;
+}
+
+.task-count {
+
+}
+
+.tasks {
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.task {
+    font-size: 1.25rem;
+}
+
+.delete-buttons {
+
+}
+
+.add-todo-button {
+    
+}
+
+.task-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer */
+
+.footer {
+    font-size: 1.25rem;
+    font-weight: 900;
+    background-color: rgb(180, 180, 180);
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
