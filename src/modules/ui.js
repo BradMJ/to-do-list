@@ -141,6 +141,7 @@ export default class UI {
         UI.loadProjectContent(projectName);
         UI.initDeleteProjectButton();
         UI.initDeleteTasksButton();
+        UI.renderTaskCount();
     };
 
     static initDeleteProjectButton() {
@@ -239,6 +240,7 @@ export default class UI {
         Storage.addTask(projectName, new Task(taskName));
         UI.createTask(taskName);
         UI.closeAddTaskModal();
+        UI.renderTaskCount();
     };
 
     static handleAddTaskModalInput(e) {
@@ -260,6 +262,13 @@ export default class UI {
             e.target.classList.remove('task-complete');
         };
     };
+    
+    static renderTaskCount() {
+        const taskCountElement = document.querySelector('[data-task-count]');
+        const taskCount = document.querySelectorAll('.task-checkbox').length;
+        const taskString = taskCount === 1 ? "task" : "tasks";
+        taskCountElement.innerText = `${taskCount} ${taskString} remaining`;
+    }
 
     static initDeleteTasksButton() {
         const deleteCompletedTasksButton = document.querySelector('[data-delete-completed-tasks-btn]');
@@ -278,6 +287,7 @@ export default class UI {
 
         UI.clearTasks();
         UI.loadTasks(projectName);
+        UI.renderTaskCount();
     };
 
     static clearTasks() {
